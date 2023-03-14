@@ -35,4 +35,3 @@ public class Media {
         this.gender = gender;
     }
 }
-

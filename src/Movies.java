@@ -1,34 +1,40 @@
 public class Movies extends Media {
-    private int duration;
+    private double duration;
     private String type; // tipo: curta ou longa
     private String[] cast;
     private String director;
     private String producer;
 
-    public Movies(String title, int year, String gender, int duration, String type, String[] cast, String director, String producer) {
+    public Movies(String title, int year, String gender, double duration, String type, String[] cast, String director, String producer) {
         super(title, year, gender);
-        this.duration = duration;
         this.type = type;
+        this.duration = duration;
         this.cast = cast;
         this.director = director;
         this.producer = producer;
     }
 
     //getters e setters
-    public int getDuration() {
+
+    public String getType() {
+        if (duration  >= 40) {
+            System.out.println("Longa metragem");
+        }
+        else {
+            System.out.println("Curta metragem");
+        }
+        return type;
+    }
+    public void setType(String type) {
+        this.type = type;
+    }
+
+    public double getDuration() {
         return duration;
     }
 
-    public void setDuration(int duration) {
+    public void setDuration(double duration) {
         this.duration = duration;
-    }
-
-    public String getType() {
-        return type;
-    }
-
-    public void setType(String type) {
-        this.type = type;
     }
 
     public String[] getCast() {
